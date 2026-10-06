@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#07110d"
+    >
+
+    <title>
+        Muslim Prayer Guide
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+    
+
+
+<header>
+
+    <div class="logo">
+        🕌
+        <span data-i18n="appName">
+            Prayer Guide
+        </span>
+       
+    </div>
+
+
+    <button
+        id="languageBtn"
+        onclick="changeLanguage()"
+    >
+        کوردی
+    </button>
+
+</header>
+
+
+
+<main id="home">
+
+
+    <section class="hero">
+
+        <div class="mosque">
+            🕌
+        </div>
+
+        <h1 data-i18n="title">
+            Muslim Prayer Guide
+        </h1>
+
+        <p data-i18n="subtitle">
+            Learn how to pray, step by step.
+        </p>
+
+    </section>
+
+
+
+    <section class="menu">
+
+        <h2 data-i18n="choosePrayer">
+            Choose a Prayer
+        </h2>
+
+
+        <div class="prayer-grid">
+
+
+            <button
+                class="prayer-card"
+                onclick="openPrayer('fajr')"
+            >
+
+                <span>🌅</span>
+
+                <strong data-i18n="fajr">
+                    Fajr
+                </strong>
+
+                <small>
+                    2 Rak'ahs
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="prayer-card"
+                onclick="openPrayer('dhuhr')"
+            >
+
+                <span>☀️</span>
+
+                <strong data-i18n="dhuhr">
+                    Dhuhr
+                </strong>
+
+                <small>
+                    4 Rak'ahs
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="prayer-card"
+                onclick="openPrayer('asr')"
+            >
+
+                <span>🌤️</span>
+
+                <strong data-i18n="asr">
+                    Asr
+                </strong>
+
+                <small>
+                    4 Rak'ahs
+                </small>
+
+            </button>
+
+           
+
+            <button
+                class="prayer-card"
+                onclick="openPrayer('maghrib')"
+            >
+
+                <span>🌇</span>
+
+                <strong data-i18n="maghrib">
+                    Maghrib
+                </strong>
+
+                <small>
+                    3 Rak'ahs
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="prayer-card"
+                onclick="openPrayer('isha')"
+            >
+
+                <span>🌙</span>
+
+                <strong data-i18n="isha">
+                    Isha
+                </strong>
+
+                <small>
+                    4 Rak'ahs
+                </small>
+
+            </button>
+
+
+
+           <!-- WUDU -->
+<button
+    class="prayer-card"
+    onclick="openWudu()"
+>
+    <span>💧</span>
+
+    <strong data-i18n="wudu">
+        Wudu
+    </strong>
+
+    <small data-i18n="ablution">
+        Ablution
+    </small>
+</button>
+
+
+<!-- PRAYER MOVEMENTS -->
+<a
+    href="movment.html"
+    class="prayer-card movment-card"
+>
+    <span>🕌</span>
+
+    <strong>
+        Prayer Movements
+
+    </strong>
+    
+    <small>
+        Salah Positions
+    </small>
+</a>
+
+        </div>
+
+    </section>
+
+
+    <p
+        class="disclaimer"
+        data-i18n="disclaimer"
+    >
+        Learning guide. Some prayer details differ between schools of Islamic law.
+    </p>
+
+
+</main>
+
+
+
+<section
+    id="guide"
+    class="hidden"
+>
+
+
+    <button
+        class="back-btn"
+        onclick="goHome()"
+        data-i18n="back"
+    >
+        ← Back
+    </button>
+
+
+
+    <div class="guide-header">
+
+        <div id="guideIcon">
+            🌅
+        </div>
+
+        <h1 id="guideTitle">
+            Fajr
+        </h1>
+
+        <p id="guideInfo">
+            2 Rak'ahs
+        </p>
+
+    </div>
+
+
+
+    <div class="step-counter">
+
+        <span id="stepCount">
+            Step 1 of 1
+        </span>
+
+    </div>
+
+
+
+    <div class="progress-container">
+
+        <div id="progressBar"></div>
+
+    </div>
+
+
+
+    <article class="step-card">
+
+
+        <div
+            class="step-number"
+            id="stepNumber"
+        >
+            1
+        </div>
+
+
+
+        <h2 id="stepTitle">
+            Intention
+        </h2>
+
+
+
+        <p id="stepDescription"></p>
+
+
+
+        <div class="arabic-box">
+
+
+            <p
+                id="arabicText"
+                lang="ar"
+                dir="rtl"
+            ></p>
+
+
+
+            <button
+                id="audioButton"
+                class="audio-btn"
+                onclick="playArabic()"
+            >
+                🔊 Listen
+            </button>
+
+
+
+            <p
+                id="audioStatus"
+                class="audio-status"
+                aria-live="polite"
+            ></p>
+
+
+        </div>
+
+
+
+        <p
+            id="translationText"
+            class="translation"
+        ></p>
+
+
+    </article>
+
+
+
+    <div class="navigation">
+
+
+        <button
+            id="previousBtn"
+            onclick="previousStep()"
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            onclick="nextStep()"
+        >
+            Next →
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+

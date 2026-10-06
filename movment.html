@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prayer Movements</title>
+
+    <link rel="stylesheet" href="movment.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="header">
+            <a href="index.html" class="back-home">← Home</a>
+
+            <div>
+                <p class="small-title">PRAYER GUIDE</p>
+                <h1>Prayer Movements</h1>
+                <p class="subtitle">
+                    Learn the movements of Salah step by step
+                </p>
+            </div>
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="movement-container">
+
+            <!-- LEFT SIDE -->
+            <aside class="sidebar">
+
+                <h2>Movements</h2>
+
+                <div id="dots" class="movement-list"></div>
+
+            </aside>
+
+
+            <!-- RIGHT SIDE -->
+            <section class="content">
+
+                <!-- STEP NUMBER -->
+                <div class="step-header">
+
+                    <div class="number" id="number">
+                        1
+                    </div>
+
+                    <div>
+                        <p id="stepText">
+                            Step 1 of 9
+                        </p>
+
+                        <div class="progress-container">
+                            <div id="progress"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE -->
+                <div class="image-container">
+
+                    <img
+                        id="movementImage"
+                        src="images/movements/qiyam.jpg"
+                        alt="Prayer movement"
+                    >
+
+                </div>
+
+
+                <!-- INFORMATION -->
+                <div class="movement-info">
+
+                    <h2 id="movementTitle">
+                        Standing (Qiyam)
+                    </h2>
+
+                    <h3 id="movementBadini">
+                        ڕاوەستان (قیام)
+                    </h3>
+
+                    <p id="movementDescription">
+                        Stand upright facing the Qiblah.
+                    </p>
+
+                    <!-- ARABIC -->
+                    <div class="arabic-box">
+
+                        <p id="arabicText" dir="rtl" lang="ar">
+                            اللَّهُ أَكْبَرُ
+                        </p>
+
+                        <button
+                            class="audio-button"
+                            onclick="speakArabic()"
+                        >
+                            🔊 Listen Arabic
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+                <div class="navigation">
+
+                    <button
+                        id="previousBtn"
+                        onclick="previousMovement()"
+                    >
+                        ← Previous
+                    </button>
+
+                    <button
+                        id="nextBtn"
+                        onclick="nextMovement()"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="movment.js"></script>
+
+</body>
+</html>

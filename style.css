@@ -1,0 +1,844 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    color-scheme: dark;
+
+    --gold: #d4af37;
+
+    --green: #102219;
+
+    --background: #07110d;
+
+    --muted: #b7c2bb;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #163c2b,
+            var(--background) 55%,
+            #030705
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+button {
+
+    font-family: inherit;
+}
+
+
+header {
+
+    min-height: 70px;
+
+    padding:
+        12px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    background:
+        rgba(0, 0, 0, .3);
+
+    border-bottom:
+        1px solid
+        rgba(212, 175, 55, .2);
+}
+
+
+.logo {
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+
+#languageBtn {
+
+    background:
+        var(--gold);
+
+    border: none;
+
+    color: #111;
+
+    padding:
+        10px 17px;
+
+    border-radius:
+        22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s;
+}
+
+
+#languageBtn:hover {
+
+    transform:
+        scale(1.05);
+}
+
+
+.hero {
+
+    text-align: center;
+
+    padding:
+        65px 20px 42px;
+}
+
+
+.mosque {
+
+    font-size: 68px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            27px,
+            5vw,
+            43px
+        );
+
+    margin-bottom: 15px;
+}
+
+
+.hero p {
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+}
+
+
+.menu {
+
+    width: 90%;
+
+    max-width: 950px;
+
+    margin: auto;
+}
+
+
+.menu h2 {
+
+    text-align: center;
+
+    color:
+        var(--gold);
+
+    margin-bottom: 25px;
+}
+
+
+.prayer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+}
+
+
+.prayer-card {
+
+    min-height: 165px;
+
+    padding:
+        20px 10px;
+
+    border:
+        1px solid
+        rgba(212, 175, 55, .25);
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #14251d,
+            #0c1712
+        );
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+}
+
+
+.prayer-card span {
+
+    font-size: 40px;
+
+    margin-bottom: 12px;
+}
+
+
+.prayer-card strong {
+
+    font-size: 20px;
+}
+
+
+.prayer-card small {
+
+    margin-top: 7px;
+
+    color:
+        var(--muted);
+}
+
+
+.prayer-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, .25);
+}
+
+
+.disclaimer {
+
+    max-width: 800px;
+
+    width: 90%;
+
+    margin:
+        30px auto;
+
+    text-align: center;
+
+    color:
+        #9eaaa2;
+
+    font-size: 13px;
+
+    line-height:
+        1.7;
+}
+
+
+.hidden {
+
+    display:
+        none !important;
+}
+
+
+#guide {
+
+    width: 90%;
+
+    max-width: 820px;
+
+    margin:
+        30px auto 65px;
+}
+
+
+.back-btn {
+
+    background:
+        transparent;
+
+    border: none;
+
+    color:
+        var(--gold);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    margin-bottom: 28px;
+
+    padding:
+        8px 0;
+}
+
+
+.guide-header {
+
+    text-align: center;
+}
+
+
+#guideIcon {
+
+    font-size: 55px;
+}
+
+
+.guide-header h1 {
+
+    font-size: 36px;
+
+    margin:
+        10px 0;
+}
+
+
+.guide-header p {
+
+    color:
+        var(--muted);
+}
+
+
+.step-counter {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    color:
+        var(--muted);
+
+    font-size: 14px;
+}
+
+
+.progress-container {
+
+    height: 7px;
+
+    background:
+        #1a2921;
+
+    border-radius:
+        20px;
+
+    margin:
+        14px 0 25px;
+
+    overflow: hidden;
+}
+
+
+#progressBar {
+
+    height: 100%;
+
+    width: 0;
+
+    background:
+        var(--gold);
+
+    transition:
+        width .3s;
+}
+
+
+.step-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #14251d,
+            #0b1510
+        );
+
+    border:
+        1px solid
+        rgba(
+            212,
+            175,
+            55,
+            .2
+        );
+
+    border-radius:
+        24px;
+
+    padding:
+        35px 28px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, .2);
+}
+
+
+.step-number {
+
+    width: 48px;
+
+    height: 48px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background:
+        var(--gold);
+
+    color:
+        #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+
+.step-card h2 {
+
+    margin:
+        24px 0 14px;
+
+    font-size: 25px;
+
+    line-height:
+        1.4;
+}
+
+
+#stepDescription {
+
+    color:
+        #d0d8d2;
+
+    line-height:
+        1.9;
+
+    font-size: 16px;
+
+    white-space:
+        pre-line;
+}
+
+
+.arabic-box {
+
+    margin:
+        28px 0 18px;
+
+    padding:
+        24px 15px;
+
+    background:
+        #050b08;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(
+            212,
+            175,
+            55,
+            .12
+        );
+}
+
+
+#arabicText {
+
+    color:
+        #e0bd4d;
+
+    font-family:
+        "Traditional Arabic",
+        "Noto Naskh Arabic",
+        Arial,
+        serif;
+
+    font-size: 31px;
+
+    line-height:
+        2;
+
+    min-height:
+        12px;
+}
+
+
+.audio-btn {
+
+    margin-top: 15px;
+
+    border: none;
+
+    background:
+        var(--gold);
+
+    color:
+        #111;
+
+    padding:
+        11px 20px;
+
+    border-radius:
+        22px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition:
+        transform .2s,
+        opacity .2s;
+}
+
+
+.audio-btn:hover {
+
+    transform:
+        scale(1.05);
+}
+
+
+.audio-btn.playing {
+
+    opacity: .7;
+
+    transform:
+        scale(.97);
+}
+
+
+.audio-status {
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 8px;
+
+    min-height:
+        16px;
+}
+
+
+.translation {
+
+    color:
+        #b7c2bb;
+
+    line-height:
+        1.8;
+
+    font-style:
+        italic;
+
+    white-space:
+        pre-line;
+}
+
+
+.navigation {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 22px;
+}
+
+
+.navigation button {
+
+    flex: 1;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s;
+}
+
+
+.navigation button:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+#previousBtn {
+
+    background:
+        #1b2a22;
+
+    color:
+        white;
+}
+
+
+#nextBtn {
+
+    background:
+        var(--gold);
+
+    color:
+        #111;
+}
+
+
+.navigation button:disabled {
+
+    opacity: .4;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+body.rtl {
+
+    direction:
+        rtl;
+}
+
+
+body.rtl header {
+
+    direction:
+        rtl;
+}
+
+
+body.rtl .back-btn {
+
+    direction:
+        rtl;
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        padding-top:
+            45px;
+    }
+
+
+    .prayer-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 12px;
+    }
+
+
+    .prayer-card {
+
+        min-height:
+            140px;
+    }
+
+
+    .step-card {
+
+        padding:
+            28px 18px;
+    }
+
+
+    #arabicText {
+
+        font-size:
+            27px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .logo {
+
+        font-size:
+            16px;
+    }
+
+
+    #languageBtn {
+
+        padding:
+            9px 12px;
+    }
+
+
+    .prayer-card strong {
+
+        font-size:
+            17px;
+    }
+
+
+    .prayer-card span {
+
+        font-size:
+            32px;
+    }
+}
+
+/* =========================================
+   MOUSE FOLLOWING BACKGROUND GLOW
+========================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    left: var(--mouse-x, 50%);
+    top: var(--mouse-y, 30%);
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212, 175, 55, 0.16) 0%,
+            rgba(212, 175, 55, 0.07) 30%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    transition:
+        left 0.15s ease,
+        top 0.15s ease;
+}
+.movement-btn {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    margin: 10px;
+
+    background: #d4af37;
+
+    color: #0b2e24;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.movement-btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 10px 25px
+        rgba(212, 175, 55, 0.3);
+}
+.movement-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.movement-card strong,
+.movement-card small {
+    display: block;
+}
+
+.movement-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--gold);
+    box-shadow:
+        0 15px 40px rgba(212, 175, 55, 0.30);
+}
